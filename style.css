@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #131212;
+    color: #333333;
+    min-height: 100vh;
+}
+
+.container {
+    width: 94%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.navbar {
+    background-color: #000000;
+    padding: 14px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 12px;
+}
+
+.logo-img {
+    height: 45px;
+    width: auto;
+}
+
+.logo-texto {
+    color: #fbfbfc;
+    font-size: 1.3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu-link {
+    color: #4b5563;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.botao-contato {
+    background-color: #e11d48;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 6px;
+}
+
+.container-painel-tabelas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 95%;
+    max-width: 1400px;
+    margin: 40px auto;
+}
+
+.coluna-tabela {
+    background: #eeecec;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.cabecalho-tabela {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.cabecalho-tabela h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.status-vivo {
+    background-color: #ffe4e6;
+    color: #e11d48;
+}
+
+.status-breve {
+    background-color: #e0f2fe;
+    color: #0369a1;
+}
+
+.tabela-responsiva {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th {
+    color: #6b7280;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 12px 8px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+td {
+    padding: 16px 8px;
+    border-bottom: 1px solid #f3f4f6;
+    font-size: 0.9rem;
+    vertical-align: middle;
+}
+
+.col-pos {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #111827;
+    width: 40px;
+}
+
+.col-clube strong {
+    color: #1f2937;
+    font-weight: 600;
+}
+
+.col-data {
+    color: #9ca3af;
+    font-size: 0.85rem;
+}
+
+.col-vagas {
+    font-weight: 700;
+}
+
+.texto-vago {
+    color: #10b981;
+}
+
+.texto-cheio {
+    color: #ef4444;
+}
+
+.btn-tabela {
+    border: none;
+    padding: 8px 14px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-tabela.liberado {
+    background-color: #f3f4f6;
+    color: #1f2937;
+}
+
+.btn-tabela.liberado:hover {
+    background-color: #e5e7eb;
+}
+
+.btn-tabela.bloqueado {
+    background-color: #fee2e2;
+    color: #ef4444;
+    cursor: not-allowed;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-conteudo {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.modal-conteudo h3 {
+    margin-bottom: 8px;
+    color: #111827;
+}
+
+.modal-conteudo p {
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.campo-grupo {
+    margin-bottom: 20px;
+}
+
+.campo-grupo label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #4b5563;
+}
+
+.campo-grupo select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+}
+
+.modal-botoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.btn-cancelar {
+    background: none;
+    border: 1px solid #d1d5db;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-confirmar {
+    background-color: #e11d48;
+    color: rgb(15, 15, 15);
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+    .container-painel-tabelas {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esporte Base - Painel de Peneiras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="#" class="logo-container">
+                <img src="download.png" alt="Logo Esporte Base" class="logo-img">
+                <span class="logo-texto">Esporte Base</span>
+            </a>
+            
+            <nav class="menu">
+                <a href="#inicio" class="menu-link">Início</a>
+                <a href="#time" class="menu-link">Times</a>
+                <a href="#jogos" class="menu-link">Jogos</a>
+                <a href="#contato" class="menu-link botao-contato">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container-painel-tabelas">
+        <section class="coluna-tabela">
+            <div class="cabecalho-tabela">
+                <h2>Masculino</h2>
+                <span class="badge status-vivo">Ao vivo</span>
+            </div>
+            
+            <div class="tabela-responsiva">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pos</th>
+                            <th>Clube</th>
+                            <th>Próxima Avaliação</th>
+                            <th>Inscritos</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-masculino"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="coluna-tabela">
+            <div class="cabecalho-tabela">
+                <h2>Feminino</h2>
+                <span class="badge status-breve">Atualização em breve</span>
+            </div>
+            
+            <div class="tabela-responsiva">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pos</th>
+                            <th>Clube</th>
+                            <th>Próxima Avaliação</th>
+                            <th>Inscritos</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-feminino"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <div id="modalPosicao" class="modal" style="display: none;">
+        <div class="modal-conteudo">
+            <h3>Finalizar Inscrição</h3>
+            <p id="modal-texto-clube">Clube selecionado</p>
+            
+            <div class="campo-grupo">
+                <label for="posicao-jogo">Selecione sua Posição</label>
+                <select id="posicao-jogo">
+                    <option value="goleiro">Goleiro</option>
+                    <option value="zagueiro">Zagueiro</option>
+                    <option value="lateral">Lateral</option>
+                    <option value="volante">Volante</option>
+                    <option value="meio-campo">Meio-Campo</option>
+                    <option value="ponta">Ponta</option>
+                    <option value="centroavante">Centroavante</option>
+                </select>
+            </div>
+            
+            <div class="modal-botoes">
+                <button class="btn-cancelar" id="btn-cancelar-modal">Cancelar</button>
+                <button class="btn-confirmar" id="btn-confirmar-modal">Confirmar Inscrição</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Importação do arquivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
