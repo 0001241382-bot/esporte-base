@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esporte Base | Plano e Relatório de Testes</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background: #000; color: #fff; padding: 30px 15px; }
+        .container { background: #1b1b1b; max-width: 1200px; margin: auto; padding: 30px; border-radius: 12px; }
+        .voltar { display: inline-block; color: #aaa; text-decoration: none; font-size: 13px; margin-bottom: 15px; }
+        .voltar:hover { color: #fff; }
+        header { border-bottom: 1px solid #333; padding-bottom: 15px; margin-bottom: 25px; }
+        header h1 { font-size: 24px; margin-bottom: 5px; }
+        header p { color: #aaa; font-size: 14px; }
+        .info { display: flex; flex-wrap: wrap; gap: 20px; background: #242424; padding: 15px 20px; border-radius: 8px; margin-bottom: 25px; font-size: 14px; }
+        .info span strong { color: #8dffad; }
+        .tabela-box { width: 100%; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; font-size: 13px; text-align: left; }
+        th, td { padding: 12px; border-bottom: 1px solid #333; vertical-align: top; line-height: 1.4; }
+        th { background: #292929; color: #fff; white-space: nowrap; }
+        tr:hover { background: #222; }
+        .badge { padding: 4px 10px; border-radius: 15px; font-weight: bold; font-size: 11px; white-space: nowrap; }
+        .passou { background: #183b25; color: #8dffad; }
+        .falhou { background: #3b1818; color: #ff6b6b; }
+        .ressalva { background: #3b3218; color: #ffd166; }
+        footer { text-align: center; color: #777; font-size: 12px; margin-top: 25px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="voltar">← Voltar para o painel principal</a>
+
+    <header>
+        <h1> Plano e Matriz de Testes (QA) — Esporte Base</h1>
+        <p>Validação das telas index.html, cadastro.html e script.js</p>
+    </header>
+
+    <div class="info">
+        <span><strong>Sistema:</strong> Esporte Base (Clube de Futebol)</span>
+        <span><strong>Dupla:</strong> João Pedro, João Vitor</span>
+        <span><strong>Ambiente:</strong> Chrome / Edge / Mobile</span>
+        <span><strong>Data:</strong> 12/11/2026</span>
+    </div>
+
+    <div class="tabela-box">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tipo de Teste</th>
+                    <th>Caso de Teste (CT)</th>
+                    <th>O que foi testado</th>
+                    <th>Como foi testado</th>
+                    <th>Resultado Esperado</th>
+                    <th>Resultado Obtido</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>CT-01</strong></td>
+                    <td>Funcional</td>
+                    <td>Cadastro de atleta com sucesso</td>
+                    <td>Formulário #cadastroForm (cadastro.html) e gravação no localStorage('atleta').</td>
+                    <td>1. Acessar cadastro.html.<br>2. Preencher Nome completo, CPF, Telefone, E-mail, Nascimento, País, Modalidade e Posição.<br>3. Clicar no botão de envio.</td>
+                    <td>Salvar nome no localStorage, voltar para index.html e mostrar " Nome Sobrenome" em verde (#8dffad) no #link-cadastro.</td>
+                    <td>Redirecionou para index.html e ficou verde, mas exibiu vírgula no nome (" João,Silva") por causa do split(' ') sem índice.</td>
+                    <td><span class="badge ressalva">Passou c/ Ressalva</span></td>
+                </tr>
+                <tr>
+                    <td><strong>CT-02</strong></td>
+                    <td>Validação</td>
+                    <td>Campo Nome vazio</td>
+                    <td>Validação obrigatória do input #nome no script.js.</td>
+                    <td>1. Deixar o campo #nome vazio ou só com espaços.<br>2. Clicar no botão de cadastrar.</td>
+                    <td>Bloquear o envio e exibir o alerta: "Digite seu nome completo!".</td>
+                    <td>O sistema bloqueou o envio e exibiu o alerta "Digite seu nome completo!".</td>
+                    <td><span class="badge passou">Passou</span></td>
+                </tr>
+                <tr>
+                    <td><strong>CT-03</strong></td>
+                    <td>Validação</td>
+                    <td>E-mail, CPF e campos obrigatórios (*)</td>
+                    <td>Campos #cpf, #telefone, #email, #nascimento, #pais, #modalidade e #posicao do cadastro.html.</td>
+                    <td>1. Preencher apenas #nome.<br>2. Deixar E-mail inválido ("teste@") e CPF vazio.<br>3. Tentar enviar.</td>
+                    <td>Exibir borda vermelha (#ff4545) e as divs .error-message de cada campo inválido.</td>
+                    <td>O formulário enviou normalmente sem validar CPF, e-mail ou selects obrigatórios.</td>
+                    <td><span class="badge falhou">Falhou</span></td>
+                </tr>
+                <tr>
+                    <td><strong>CT-04</strong></td>
+                    <td>Regra de Negócio</td>
+                    <td>Responsável legal para menor de 18 anos</td>
+                    <td>Exibição condicional da div #responsavelArea no cadastro.html.</td>
+                    <td>1. Selecionar uma data de nascimento de menor de idade no campo #nascimento.<br>2. Observar a tela.</td>
+                    <td>Remover a classe .hidden de #responsavelArea e exigir #responsavel e #telefoneResponsavel.</td>
+                    <td>A seção #responsavelArea continuou oculta porque falta a função de cálculo de idade no script.js.</td>
+                    <td><span class="badge falhou">Falhou</span></td>
+                </tr>
+                <tr>
+                    <td><strong>CT-05</strong></td>
+                    <td>Regra de Negócio</td>
+                    <td>Peneira lotada (Esgotado)</td>
+                    <td>Botões com classe .bloqueado e atributo disabled na tabela #lista-masculino e #lista-feminino.</td>
+                    <td>1. Acessar index.html.<br>2. Tentar clicar no botão "Esgotado" do Cruzeiro (26/26) ou Corinthians (26/26).</td>
+                    <td>O botão deve permanecer cinza/desabilitado e não abrir o #modalPosicao.</td>
+                    <td>O botão bloqueou o clique corretamente e manteve o texto "Esgotado".</td>
+                    <td><span class="badge passou">Passou</span></td>
+                </tr>
+                <tr>
+                    <td><strong>CT-06</strong></td>
+                    <td>Funcional</td>
+                    <td>Inscrição em peneira com vaga</td>
+                    <td>Botão .btn-inscrever (ex: Flamengo 24/26), modal #modalPosicao e botão #btn-confirmar-modal.</td>
+                    <td>1. Clicar em "Inscrever" no Flamengo.<br>2. Conferir "Clube: Flamengo" no modal.<br>3. Clicar em confirmar.</td>
+                    <td>Atualizar vagas de "24/26" para "25/26", mudar botão para "Inscrito ✓" e mostrar alerta.</td>
+                    <td>Mostrou "Inscrito ✓" e o alerta, mas o contador ficou "25/24,26" em vez de "25/26".</td>
+                    <td><span class="badge falhou">Falhou</span></td>
+                </tr>
+                <tr>
+                    <td><strong>CT-07</strong></td>
+                    <td>Integração</td>
+                    <td>Compra na Loja via WhatsApp</td>
+                    <td>Botão .btn-comprar, modal #modalCompra e redirecionamento #btn-confirmar-compra.</td>
+                    <td>1. Clicar em comprar um produto.<br>2. Escolher #compra-tamanho e #compra-pagamento.<br>3. Confirmar compra.</td>
+                    <td>Fechar o modal e abrir o WhatsApp com número da loja e mensagem formatada (?text=...).</td>
+                    <td>Abriu URL quebrada ("https://wa.meOl%C3%A1...") sem número de telefone e sem "?text=".</td>
+                    <td><span class="badge falhou">Falhou</span></td>
+                </tr>
+                <tr>
+                    <td><strong>CT-08</strong></td>
+                    <td>Responsividade</td>
+                    <td>Layout Mobile (&lt; 550px)</td>
+                    <td>Classes .tabela-responsiva (index.html) e @media(max-width: 550px) (cadastro.html).</td>
+                    <td>1. Abrir DevTools (F12) em modo celular (375px).<br>2. Testar navegação entre index.html e cadastro.html.</td>
+                    <td>Campos .form-row ficarem um abaixo do outro e tabelas rolarem lateralmente sem cortar a tela.</td>
+                    <td>Layout adaptado corretamente em ambas as páginas sem quebra horizontal.</td>
+                    <td><span class="badge passou">Passou</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        Esporte Base © 2026 — Garantia de Qualidade (QA)
+    </footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

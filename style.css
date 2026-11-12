@@ -278,3 +278,330 @@ td {
         gap: 20px;
     }
 }
+/* =========================================
+   SEÇÃO DE JOGOS AO VIVO
+   ========================================= */
+.secao-jogos-vivo {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #ffffff;
+}
+
+.cabecalho-secao {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 24px;
+}
+
+.cabecalho-secao h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Badge vermelho igual ao "AO VIVO" da tabela */
+.secao-jogos-vivo .status-vivo {
+  background-color: #ffe5e5;
+  color: #d93025;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  animation: piscar 1.5s infinite;
+}
+
+@keyframes piscar {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+/* =========================================
+   SEÇÃO DA LOJA DE PRODUTOS
+   ========================================= */
+.secao-loja {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #ffffff;
+}
+
+.secao-loja .cabecalho-secao {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 24px;
+}
+
+.secao-loja h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.status-loja {
+  background-color: #e0f2fe;
+  color: #0284c7;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+/* Grade de Produtos Responsiva */
+.grade-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Card do Produto (Estilo claro igual às tabelas) */
+.card-produto {
+  background-color: #f4f4f5;
+  color: #18181b;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-produto:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.produto-img {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: #e4e4e7;
+}
+
+.produto-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tag-destaque {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #d93025;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.produto-info {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.categoria-produto {
+  font-size: 0.75rem;
+  color: #71717a;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.produto-info h3 {
+  font-size: 1.05rem;
+  margin: 0 0 10px 0;
+  color: #18181b;
+}
+
+.produto-info .preco {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #18181b;
+  margin: 0 0 16px 0;
+  margin-top: auto;
+}
+
+.btn-comprar {
+  width: 100%;
+  padding: 10px;
+  background-color: #18181b;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-comprar:hover {
+  background-color: #d93025;
+}
+/* =========================================
+   SEÇÃO DE TIMES PARCEIROS
+   ========================================= */
+.secao-times {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #ffffff;
+}
+
+.grade-times {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card-time {
+  background-color: #1f1f23;
+  border: 1px solid #2e2e34;
+  padding: 22px;
+  border-radius: 12px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card-time:hover {
+  transform: translateY(-3px);
+  border-color: #e11d48;
+}
+
+.card-time h3 {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.cidade-time {
+  font-size: 0.8rem;
+  color: #e11d48;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.info-time {
+  font-size: 0.9rem;
+  color: #a1a1aa;
+  line-height: 1.5;
+}
+
+/* =========================================
+   SEÇÃO DE CONTATO E DÚVIDAS
+   ========================================= */
+.secao-contato {
+  padding: 40px 20px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.box-contato {
+  background-color: #f4f4f5;
+  color: #18181b;
+  border-radius: 12px;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.contato-texto h2 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: #111827;
+}
+
+.contato-texto p {
+  font-size: 0.95rem;
+  color: #52525b;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+.lista-contatos {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #27272a;
+}
+
+.form-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-contato input,
+.form-contato textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d4d4d8;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background-color: #ffffff;
+  color: #18181b;
+  outline: none;
+  font-family: inherit;
+}
+
+.form-contato input:focus,
+.form-contato textarea:focus {
+  border-color: #e11d48;
+}
+
+.btn-enviar-contato {
+  background-color: #e11d48;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-enviar-contato:hover {
+  background-color: #be123c;
+}
+
+/* =========================================
+   RODAPÉ (FOOTER)
+   ========================================= */
+.rodape {
+  background-color: #000000;
+  color: #a1a1aa;
+  text-align: center;
+  padding: 25px 15px;
+  border-top: 1px solid #27272a;
+  font-size: 0.9rem;
+}
+
+.rodape .copy {
+  font-size: 0.8rem;
+  color: #71717a;
+  margin-top: 6px;
+}
+
+/* =========================================
+   RESPONSIVIDADE PARA CELULAR
+   ========================================= */
+@media (max-width: 768px) {
+  .box-contato {
+    grid-template-columns: 1fr;
+  }
+}
+

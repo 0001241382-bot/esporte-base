@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -11,20 +11,21 @@
     <header class="navbar">
         <div class="container">
             <a href="#" class="logo-container">
-                <img src="download.png" alt="Logo Esporte Base" class="logo-img">
+                <img src="0d127c63-ec48-4680-995f-450033f6f13c.png" alt="Logo Esporte Base" class="logo-img">
                 <span class="logo-texto">Esporte Base</span>
             </a>
             
             <nav class="menu">
                 <a href="#inicio" class="menu-link">Início</a>
                 <a href="#time" class="menu-link">Times</a>
-                <a href="#jogos" class="menu-link">Jogos</a>
+                <a href="#loja" class="menu-link">Loja</a>
+                <a href="cadastro.html" id="link-cadastro" class="menu-link">Cadastrar</a>
                 <a href="#contato" class="menu-link botao-contato">Contato</a>
             </nav>
         </div>
     </header>
 
-    <main class="container-painel-tabelas">
+    <main id="inicio" class="container-painel-tabelas">
         <section class="coluna-tabela">
             <div class="cabecalho-tabela">
                 <h2>Masculino</h2>
@@ -42,7 +43,57 @@
                             <th>Ação</th>
                         </tr>
                     </thead>
-                    <tbody id="lista-masculino"></tbody>
+                    <tbody id="lista-masculino">
+                        <tr>
+                            <td class="col-pos">1</td>
+                            <td class="col-clube"><strong>Cruzeiro</strong></td>
+                            <td class="col-data">12 nov 14:45</td>
+                            <td class="col-vagas texto-cheio">26/26</td>
+                            <td><button class="btn-tabela bloqueado" disabled>Esgotado</button></td>
+                        </tr>
+                        <tr>
+                            <td class="col-pos">2</td>
+                            <td class="col-clube"><strong>Corinthians</strong></td>
+                            <td class="col-data">17 nov 16:45</td>
+                            <td class="col-vagas texto-cheio">26/26</td>
+                            <td><button class="btn-tabela bloqueado" disabled>Esgotado</button></td>
+                        </tr>
+                        <tr>
+                            <td class="col-pos">3</td>
+                            <td class="col-clube"><strong>Flamengo</strong></td>
+                            <td class="col-data">12 nov</td>
+                            <td class="col-vagas texto-vago">24/26</td>
+                            <td><button class="btn-tabela liberado btn-inscrever" data-clube="Flamengo" data-data="12 nov">Inscrever</button></td>
+                        </tr>
+                        <tr>
+                            <td class="col-pos">4</td>
+                            <td class="col-clube"><strong>Palmeiras</strong></td>
+                            <td class="col-data">12 nov 16:45</td>
+                            <td class="col-vagas texto-vago">16/26</td>
+                            <td><button class="btn-tabela liberado btn-inscrever" data-clube="Palmeiras" data-data="12 nov 16:45">Inscrever</button></td>
+                        </tr>
+                        <tr>
+                            <td class="col-pos">5</td>
+                            <td class="col-clube"><strong>Vasco da Gama</strong></td>
+                            <td class="col-data">13 nov 17:00</td>
+                            <td class="col-vagas texto-vago">12/26</td>
+                            <td><button class="btn-tabela liberado btn-inscrever" data-clube="Vasco da Gama" data-data="13 nov 17:00">Inscrever</button></td>
+                        </tr>
+                        <tr>
+                            <td class="col-pos">6</td>
+                            <td class="col-clube"><strong>Mirassol</strong></td>
+                            <td class="col-data">14 nov 16:45</td>
+                            <td class="col-vagas texto-vago">10/26</td>
+                            <td><button class="btn-tabela liberado btn-inscrever" data-clube="Mirassol" data-data="14 nov 16:45">Inscrever</button></td>
+                        </tr>
+                        <tr>
+                            <td class="col-pos">7</td>
+                            <td class="col-clube"><strong>Santos</strong></td>
+                            <td class="col-data">14 nov 07:15</td>
+                            <td class="col-vagas texto-vago">8/26</td>
+                            <td><button class="btn-tabela liberado btn-inscrever" data-clube="Santos" data-data="14 nov 07:15">Inscrever</button></td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </section>
@@ -64,7 +115,57 @@
                             <th>Ação</th>
                         </tr>
                     </thead>
-                    <tbody id="lista-feminino"></tbody>
+                    <tbody id="lista-feminino">
+                        <tr>
+                            <td class="col-pos">1</td>
+                            <td class="col-clube"><strong>Corinthians</strong></td>
+                            <td class="col-data">27 nov 22:30</td>
+                            <td class="col-vagas texto-cheio">26/26</td>
+                            <td><button class="btn-tabela bloqueado" disabled>Esgotado</button></td>
+                        </tr>
+                        <tr>
+                            <td class="col-pos">2</td>
+                            <td class="col-clube"><strong>Cruzeiro</strong></td>
+                            <td class="col-data">Sem data</td>
+                            <td class="col-vagas texto-cheio">26/26</td>
+                            <td><button class="btn-tabela bloqueado" disabled>Esgotado</button></td>
+                        </tr>
+                        <tr>
+                            <td class="col-pos">3</td>
+                            <td class="col-clube"><strong>Palmeiras</strong></td>
+                            <td class="col-data">Sem data</td>
+                            <td class="col-vagas texto-vago">20/26</td>
+                            <td><button class="btn-tabela liberado btn-inscrever" data-clube="Palmeiras" data-data="Sem data">Inscrever</button></td>
+                        </tr>
+                        <tr>
+                            <td class="col-pos">4</td>
+                            <td class="col-clube"><strong>Santos</strong></td>
+                            <td class="col-data">Sem data</td>
+                            <td class="col-vagas texto-vago">15/26</td>
+                            <td><button class="btn-tabela liberado btn-inscrever" data-clube="Santos" data-data="Sem data">Inscrever</button></td>
+                        </tr>
+                        <tr>
+                            <td class="col-pos">5</td>
+                            <td class="col-clube"><strong>Flamengo</strong></td>
+                            <td class="col-data">30 nov</td>
+                            <td class="col-vagas texto-vago">14/26</td>
+                            <td><button class="btn-tabela liberado btn-inscrever" data-clube="Flamengo" data-data="30 nov">Inscrever</button></td>
+                        </tr>
+                        <tr>
+                            <td class="col-pos">6</td>
+                            <td class="col-clube"><strong>Vasco da Gama</strong></td>
+                            <td class="col-data">Sem data</td>
+                            <td class="col-vagas texto-vago">5/26</td>
+                            <td><button class="btn-tabela liberado btn-inscrever" data-clube="Vasco da Gama" data-data="Sem data">Inscrever</button></td>
+                        </tr>
+                        <tr>
+                            <td class="col-pos">7</td>
+                            <td class="col-clube"><strong>Mirassol</strong></td>
+                            <td class="col-data">01 dez 18:25</td>
+                            <td class="col-vagas texto-vago">2/26</td>
+                            <td><button class="btn-tabela liberado btn-inscrever" data-clube="Mirassol" data-data="01 dez 18:25">Inscrever</button></td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </section>
@@ -84,10 +185,25 @@
                     <option value="volante">Volante</option>
                     <option value="meio-campo">Meio-Campo</option>
                     <option value="ponta">Ponta</option>
+ 
+    <div id="modalPosicao" class="modal" style="display: none;">
+        <div class="modal-conteudo">
+            <h3>Finalizar Inscrição</h3>
+            <p id="modal-texto-clube">Clube selecionado</p>
+            
+            <div class="campo-grupo">
+                <label for="posicao-jogo">Selecione sua Posição</label>
+                <select id="posicao-jogo">
+                    <option value="goleiro">Goleiro</option>
+                    <option value="zagueiro">Zagueiro</option>
+                    <option value="lateral">Lateral</option>
+                    <option value="volante">Volante</option>
+                    <option value="meio-campo">Meio-Campo</option>
+                    <option value="ponta">Ponta</option>
                     <option value="centroavante">Centroavante</option>
                 </select>
             </div>
-            
+
             <div class="modal-botoes">
                 <button class="btn-cancelar" id="btn-cancelar-modal">Cancelar</button>
                 <button class="btn-confirmar" id="btn-confirmar-modal">Confirmar Inscrição</button>
@@ -95,7 +211,105 @@
         </div>
     </div>
 
-    <!-- Importação do arquivo JavaScript -->
-    <script src="script.js"></script>
+    <section id="loja" class="secao-loja">
+        <div class="container">
+            <div class="cabecalho-secao">
+                <h2>Loja Oficial Esporte Base</h2>
+                <span class="badge status-loja">Equipamentos para Peneiras</span>
+            </div>
+
+            <div class="grade-produtos">
+                <div class="card-produto">
+                    <div class="produto-img">
+                        <img src="unnamed (2).png" alt="Chuteira Campo Pro">
+                        <span class="tag-destaque">Mais Vendido</span>
+                    </div>
+                    <div class="produto-info">
+                        <span class="categoria-produto">Calçados</span>
+                        <h3>Chuteira Campo Speed Pro</h3>
+                        <p class="preco">R$ 249,90</p>
+                        <button class="btn-comprar" data-produto="Chuteira Campo Speed Pro">Comprar Agora</button>
+                    </div>
+                </div>
+
+                <div class="card-produto">
+                    <div class="produto-img">
+                        <img src="download.jpg" alt="Camisa Treino Esporte Base">
+                    </div>
+                    <div class="produto-info">
+                        <span class="categoria-produto">Vestuário</span>
+                        <h3>Camisa Oficial de Treino</h3>
+                        <p class="preco">R$ 89,90</p>
+                        <button class="btn-comprar" data-produto="Camisa Oficial de Treino">Comprar Agora</button>
+                    </div>
+                </div>
+
+                <div class="card-produto">
+                    <div class="produto-img">
+                        <img src="unnamed (1).png" alt="Kit Completo Peneira">
+                        <span class="tag-destaque">Kit Completo</span>
+                    </div>
+                    <div class="produto-info">
+                        <span class="categoria-produto">Acessórios</span>
+                        <h3>Kit Meião + Caneleira + Calção</h3>
+                        <p class="preco">R$ 119,90</p>
+                        <button class="btn-comprar" data-produto="Kit Meião + Caneleira + Calção">Comprar Agora</button>
+                    </div>
+                </div>
+
+                <div class="card-produto">
+                    <div class="produto-img">
+                        <img src="unnamed.png" alt="Luva de Goleiro">
+                    </div>
+                    <div class="produto-info">
+                        <span class="categoria-produto">Goleiros</span>
+                        <h3>Luva Profissional Grip Max</h3>
+                        <p class="preco">R$ 159,90</p>
+                        <button class="btn-comprar" data-produto="Luva Profissional Grip Max">Comprar Agora</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="modalCompra" class="modal" style="display: none;">
+        <div class="modal-conteudo">
+            <h3>Finalizar Pedido</h3>
+            <p id="compra-nome-produto" style="font-weight: bold; color: #111827; margin-bottom: 4px;">Produto</p>
+            <p id="compra-preco-produto" style="color: #e11d48; font-weight: 800; font-size: 1.1rem; margin-bottom: 16px;">R$ 0,00</p>
+
+            <div class="campo-grupo">
+                <label for="compra-tamanho">Selecione o Tamanho</label>
+                <select id="compra-tamanho">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                    <option value="38">38</option>
+                    <option value="39">39</option>
+                    <option value="40">40</option>
+                    <option value="41">41</option>
+                    <option value="42">42</option>
+                    <option value="43">43</option>
+                </select>
+            </div>
+
+            <div class="campo-grupo">
+                <label for="compra-pagamento">Forma de Pagamento</label>
+                <select id="compra-pagamento">
+                    <option value="PIX (5% de desconto)">PIX</option>
+                    <option value="Cartão de Crédito (até 3x)">Cartão de Crédito</option>
+                    <option value="Combinar no WhatsApp">Combinar no WhatsApp</option>
+                </select>
+            </div>
+
+            <div class="modal-botoes">
+                <button class="btn-cancelar" id="btn-cancelar-compra">Cancelar</button>
+                    <footer>
+        Esporte Base © 2026 — Documento de Garantia de Qualidade (QA)
+    </footer>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
+         
